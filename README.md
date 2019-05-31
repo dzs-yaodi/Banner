@@ -24,13 +24,11 @@ app:indicator_drawable_selected="@drawable/banner_selected_shape" 设置的宽�
 
     1、需要在imageLoder中 返回圆角ImageView ,这个方法也是原有库中就已经封好的方法。
     
-    2、需要自己新建一个布局，复制出原来的banner.xml文件，因为里面的id需要相同，需要修改指示器的背景为下边带圆角的
+    2、需要自己新建一个布局，复制出原来的banner.xml文件，需要修改指示器的背景为下边带圆角的，所以需要自己写布局，布局中id需要banner中的相同，
     
-    </br>app:banner_layout="@layout/banner_layout"
+    app:banner_layout="@layout/banner_layout"  在layout中给底部指示器设置底部带圆角的背景xml
     
-    新建一个shape的xml文件，给指示器背景 左下角和右下角画上圆角。
-    
-    使用方式还是和原来一样，通过原来暴露的属性，直接新建两个shape 的xml文件，注意两个文件都要设置宽高。
+    设置指示器的方法还是和原来一样，通过原来暴露的属性，直接新建两个shape 的xml文件，注意两个文件都要设置宽高。
 
     app:indicator_drawable_selected="@drawable/banner_selected_shape"
 
