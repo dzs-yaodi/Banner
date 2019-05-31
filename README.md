@@ -34,6 +34,6 @@ app:indicator_drawable_selected="@drawable/banner_selected_shape" 设置的宽�
 
     app:indicator_drawable_unselected="@drawable/banner_unselected_shape"
    
-   3、设置选中 和没有选中时 指示器的样式，可自定义。
+    3、设置选中 和没有选中时 指示器的样式，可自定义。
     
 第三个banner 就是使用普通样式，修改了指示器
