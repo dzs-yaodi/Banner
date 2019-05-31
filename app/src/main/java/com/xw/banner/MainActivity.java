@@ -7,12 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.sobey.banner.Banner;
-import com.sobey.banner.BannerConfig;
-import com.sobey.banner.Transformer;
-import com.sobey.banner.loader.ImageLoader;
-import com.sobey.banner.loader.ImageLoaderInterface;
-import com.sobey.banner.view.RoundAngleImageView;
+import com.xw.banner.loader.ImageLoader;
+import com.xw.banner.loader.ImageLoaderInterface;
+import com.xw.banner.view.RoundAngleImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Banner mBanner1;
     private Banner mBanner2;
+    private Banner mBanner3;
     private List<Integer> integerList = new ArrayList<>();
     private List<String> stringList = new ArrayList<>();
 
@@ -32,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         mBanner1 = findViewById(R.id.banner1);
         mBanner2 = findViewById(R.id.banner2);
+        mBanner3 = findViewById(R.id.banner3);
 
         integerList.add(R.mipmap.image1);
         integerList.add(R.mipmap.image2);
@@ -45,33 +44,40 @@ public class MainActivity extends AppCompatActivity {
         stringList.add("这是标题4");
         stringList.add("这是标题5");
 
-    //设置banner样式
-        mBanner1.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
-        mBanner2.setBannerStyle(BannerConfig.CUSTOM_INDICATOR);
+        setBanner(mBanner1,1);
+        setBanner(mBanner2,2);
+        setBanner(mBanner3,3);
+    }
+
+    private void setBanner(Banner banner,int style) {
+
+        //设置banner样式
         // 设置图片加载器
-        mBanner1.setImageLoader(new OrdinaryImageLoder());
-        mBanner2.setImageLoader(new CustomRoundedImageLoader());
+        if (style == 1){
+            banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+            banner.setImageLoader(new OrdinaryImageLoder());
+        }else if (style == 2){
+            banner.setBannerStyle(BannerConfig.CUSTOM_INDICATOR);
+            banner.setImageLoader(new CustomRoundedImageLoader());
+        }else{
+            banner.setBannerStyle(BannerConfig.CUSTOM_INDICATOR);
+            banner.setImageLoader(new OrdinaryImageLoder());
+        }
 
         // 设置banner动画效果
-        mBanner1.setBannerAnimation(Transformer.RotateDown);
-        mBanner2.setBannerAnimation(Transformer.RotateDown);
+        banner.setBannerAnimation(Transformer.RotateDown);
 
         // 设置轮播时间
-        mBanner1.setDelayTime(2000);
-        mBanner2.setDelayTime(2000);
+        banner.setDelayTime(2000);
         // 设置指示器位置（当banner模式中有指示器时）
-        mBanner1.setIndicatorGravity(BannerConfig.RIGHT);
-        mBanner2.setIndicatorGravity(BannerConfig.RIGHT);
+        banner.setIndicatorGravity(BannerConfig.RIGHT);
 
         // 设置图片集合
-        mBanner1.setImages(integerList);
-        mBanner2.setImages(integerList);
+        banner.setImages(integerList);
         // 设置标题集合（当banner样式有显示title时）
-        mBanner1.setBannerTitles(stringList);
-        mBanner2.setBannerTitles(stringList);
+        banner.setBannerTitles(stringList);
 
-        mBanner1.start();
-        mBanner2.start();
+        banner.start();
     }
 
     private class CustomRoundedImageLoader implements ImageLoaderInterface {

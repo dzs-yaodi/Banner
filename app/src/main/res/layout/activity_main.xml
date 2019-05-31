@@ -7,12 +7,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.sobey.banner.Banner
+    <com.xw.banner.Banner
         android:id="@+id/banner1"
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
 
-    <com.sobey.banner.Banner
+    <com.xw.banner.Banner
         android:id="@+id/banner2"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -21,5 +21,14 @@
         app:indicator_drawable_selected="@drawable/banner_selected_shape"
         app:indicator_drawable_unselected="@drawable/banner_unselected_shape"
         />
+
+     <com.xw.banner.Banner
+        android:id="@+id/banner3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:indicator_drawable_selected="@drawable/banner_selected_shape"
+        app:indicator_drawable_unselected="@drawable/banner_unselected_shape"
+        />
+
 
 </LinearLayout>
