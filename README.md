@@ -18,6 +18,6 @@ app:indicator_drawable_selected="@drawable/banner_selected_shape"
 
 app:indicator_drawable_unselected="@drawable/banner_unselected_shape"
 
-![]（https://github.com/XW837156540/Banner/raw/master/app/src/main/res/drawable/result.jpg）
+![](https://github.com/XW837156540/Banner/master/app/src/main/res/drawable/result.jpg)
 
 
