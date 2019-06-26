@@ -28,18 +28,6 @@
             android:visibility="gone"
             />
 
-          <LinearLayout
-            android:id="@+id/roundIndicator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_centerVertical="true"
-            android:padding="10dp"
-            android:visibility="gone"
-            />
-
         <TextView
             android:id="@+id/numIndicator"
             android:layout_width="40dp"
@@ -104,6 +92,17 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/roundIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:visibility="gone"
+            />
     </RelativeLayout>
 
     <ImageView
