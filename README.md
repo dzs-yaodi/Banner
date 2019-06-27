@@ -4,6 +4,22 @@
 
 [参考:https://github.com/wenchaosong/Banner](https://github.com/wenchaosong/Banner)
 
+使用
+
+allprojects {
+
+		repositories {
+        
+			...
+            
+			maven { url 'https://jitpack.io' }
+            
+		}
+        
+	}
+    
+     implementation 'com.github.dzs-yaodi:Banner:Tag'
+
 该lib是直接在youth.banner 源码上修改的，因为原库设置选中属性的时候，显示的效果是方形的
 
 app:indicator_drawable_selected="@drawable/banner_selected_shape" 设置的宽度没有效果。
