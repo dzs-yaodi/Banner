@@ -18,7 +18,7 @@ allprojects {
         
 	}
     
-     implementation 'com.github.dzs-yaodi:Banner:Tag'
+     implementation 'com.github.dzs-yaodi:Banner:1.1'
 
 该lib是直接在youth.banner 源码上修改的，因为原库设置选中属性的时候，显示的效果是方形的
 
