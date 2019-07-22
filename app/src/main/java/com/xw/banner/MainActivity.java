@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         //设置banner样式
         // 设置图片加载器
         if (style == 1){
-            banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+            banner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
             banner.setImageLoader(new OrdinaryImageLoder());
         }else if (style == 2){
             banner.setBannerStyle(BannerConfig.CUSTOM_INDICATOR);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         // 设置图片集合
         banner.setImages(integerList);
         // 设置标题集合（当banner样式有显示title时）
-        banner.setBannerTitles(stringList);
+//        banner.setBannerTitles(stringList);
 
         banner.start();
     }

@@ -272,6 +272,10 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     }
 
     private void setTitleStyleUI() {
+
+        if (titles == null || titles.size() <= 0){
+            return;
+        }
         if (titles.size() != imageUrls.size()) {
             throw new RuntimeException("[Banner] --> The number of titles and images is different");
         }
@@ -307,10 +311,10 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
                 numIndicatorInside.setVisibility(visibility);
                 setTitleStyleUI();
                 break;
-            case BannerConfig.CIRCLE_INDICATOR_TITLE:
-                indicator.setVisibility(visibility);
-                setTitleStyleUI();
-                break;
+//            case BannerConfig.CIRCLE_INDICATOR_TITLE:
+//                indicator.setVisibility(visibility);
+//                setTitleStyleUI();
+//                break;
             case BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE:
                 indicatorInside.setVisibility(visibility);
                 setTitleStyleUI();
@@ -326,7 +330,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private void initImages() {
         imageViews.clear();
         if (bannerStyle == BannerConfig.CIRCLE_INDICATOR ||
-                bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE ||
+//                bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE ||
                 bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE || bannerStyle == BannerConfig.CUSTOM_INDICATOR) {
             createIndicator();
         } else if (bannerStyle == BannerConfig.NUM_INDICATOR_TITLE) {
@@ -425,8 +429,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
                 imageView.setImageResource(mIndicatorUnselectedResId);
             }
             indicatorImages.add(imageView);
-            if (bannerStyle == BannerConfig.CIRCLE_INDICATOR ||
-                    bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE)
+            if (bannerStyle == BannerConfig.CIRCLE_INDICATOR)//||
+//                    bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE)
                 indicator.addView(imageView, params);
             else if (bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE)
                 indicatorInside.addView(imageView, params);
@@ -597,7 +601,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
             mOnPageChangeListener.onPageSelected(toRealPosition(position));
         }
         if (bannerStyle == BannerConfig.CIRCLE_INDICATOR ||
-                bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE ||
+//                bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE ||
                 bannerStyle == BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE || bannerStyle == BannerConfig.CUSTOM_INDICATOR) {
             indicatorImages.get((lastPosition - 1 + count) % count).setImageResource(mIndicatorUnselectedResId);
             indicatorImages.get((position - 1 + count) % count).setImageResource(mIndicatorSelectedResId);
@@ -613,17 +617,21 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
                 break;
             case BannerConfig.NUM_INDICATOR_TITLE:
                 numIndicatorInside.setText(position + "/" + count);
-                bannerTitle.setText(titles.get(position - 1));
+                if (titles != null && titles.size() > 0) {
+                    bannerTitle.setText(titles.get(position - 1));
+                }
                 break;
-            case BannerConfig.CIRCLE_INDICATOR_TITLE:
-                bannerTitle.setText(titles.get(position - 1));
-                break;
+//            case BannerConfig.CIRCLE_INDICATOR_TITLE:
             case BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE:
-                bannerTitle.setText(titles.get(position - 1));
-                break;
             case BannerConfig.CUSTOM_INDICATOR:
-                bannerTitle.setText(titles.get(position - 1));
+                if (titles != null && titles.size() > 0) {
+                    bannerTitle.setText(titles.get(position - 1));
+                }
                 break;
+//                bannerTitle.setText(titles.get(position - 1));
+//                break;
+//                bannerTitle.setText(titles.get(position - 1));
+//                break;
         }
 
     }

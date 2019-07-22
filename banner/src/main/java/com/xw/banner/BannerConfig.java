@@ -5,12 +5,19 @@ public class BannerConfig {
     /**
      * indicator style
      */
+    //不设置指示器
     public static final int NOT_INDICATOR = 0;
+    //圆形指示器无标题
     public static final int CIRCLE_INDICATOR = 1;
+    //数字圆形背景指示器不带标题
     public static final int NUM_INDICATOR = 2;
+    //数字无背景指示器带标题
     public static final int NUM_INDICATOR_TITLE = 3;
-    public static final int CIRCLE_INDICATOR_TITLE = 4;
+//    public static final int CIRCLE_INDICATOR_TITLE = 4;
+
+    //圆角指示器带标题
     public static final int CIRCLE_INDICATOR_TITLE_INSIDE = 5;
+    //圆角矩形指示器
     public static final int CUSTOM_INDICATOR = 6;
     /**
      * indicator gravity
