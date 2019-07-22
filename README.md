@@ -18,7 +18,7 @@ allprojects {
         
 	}
     
-     implementation 'com.github.dzs-yaodi:Banner:1.1'
+     implementation 'com.github.dzs-yaodi:Banner:1.2'
 
 该lib是直接在youth.banner 源码上修改的，因为原库设置选中属性的时候，显示的效果是方形的
 
@@ -53,3 +53,30 @@ app:indicator_drawable_selected="@drawable/banner_selected_shape" 设置的宽�
     3、设置选中 和没有选中时 指示器的样式，可自定义。
     
 第三个banner 就是使用普通样式，修改了指示器
+
+指示器类型说明  BannerConfig
+
+ //不设置指示器
+    public static final int NOT_INDICATOR = 0;
+    //圆形指示器无标题
+    public static final int CIRCLE_INDICATOR = 1;
+    //数字圆形背景指示器不带标题
+    public static final int NUM_INDICATOR = 2;
+    //数字无背景指示器带标题
+    public static final int NUM_INDICATOR_TITLE = 3;
+    //圆角指示器带标题
+    public static final int CIRCLE_INDICATOR_TITLE_INSIDE = 5;
+    //圆角矩形指示器
+    public static final int CUSTOM_INDICATOR = 6;
+
+
+更新
+
+Banner1.2 处理圆角矩形指示器不设置标题闪退的问题
+
+![效果图](https://github.com/XW837156540/Banner/raw/master/app/src/main/res/drawable/no_title.jpg)
+
+
+
+
+
