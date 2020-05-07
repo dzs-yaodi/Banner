@@ -46,8 +46,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private int scrollTime = BannerConfig.DURATION;
     private boolean isAutoPlay = BannerConfig.IS_AUTO_PLAY;
     private boolean isScroll = BannerConfig.IS_SCROLL;
-    private int mIndicatorSelectedResId = R.drawable.gray_radius;
-    private int mIndicatorUnselectedResId = R.drawable.white_radius;
+    private int mIndicatorSelectedResId = R.drawable.xw_banner_gray_radius;
+    private int mIndicatorUnselectedResId = R.drawable.xw_banner_white_radius;
     private int mLayoutResId = R.layout.banner;
     private int titleHeight;
     private int titleBackground;
@@ -103,15 +103,15 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         imageViews.clear();
         handleTypedArray(context, attrs);
         View view = LayoutInflater.from(context).inflate(mLayoutResId, this, true);
-        bannerDefaultImage = (ImageView) view.findViewById(R.id.bannerDefaultImage);
-        viewPager = (BannerViewPager) view.findViewById(R.id.bannerViewPager);
-        titleView = (LinearLayout) view.findViewById(R.id.titleView);
-        indicator = (LinearLayout) view.findViewById(R.id.circleIndicator);
-        roundIndicator = (LinearLayout) view.findViewById(R.id.roundIndicator);
-        indicatorInside = (LinearLayout) view.findViewById(R.id.indicatorInside);
-        bannerTitle = (TextView) view.findViewById(R.id.bannerTitle);
-        numIndicator = (TextView) view.findViewById(R.id.numIndicator);
-        numIndicatorInside = (TextView) view.findViewById(R.id.numIndicatorInside);
+        bannerDefaultImage = (ImageView) view.findViewById(R.id.xw_bannerDefaultImage);
+        viewPager = (BannerViewPager) view.findViewById(R.id.xw_bannerViewPager);
+        titleView = (LinearLayout) view.findViewById(R.id.xw_titleView);
+        indicator = (LinearLayout) view.findViewById(R.id.xw_circleIndicator);
+        roundIndicator = (LinearLayout) view.findViewById(R.id.xw_roundIndicator);
+        indicatorInside = (LinearLayout) view.findViewById(R.id.xw_indicatorInside);
+        bannerTitle = (TextView) view.findViewById(R.id.xw_bannerTitle);
+        numIndicator = (TextView) view.findViewById(R.id.xw_numIndicator);
+        numIndicatorInside = (TextView) view.findViewById(R.id.xw_numIndicatorInside);
         bannerDefaultImage.setImageResource(bannerBackgroundImage);
         initViewPagerScroll();
     }
@@ -120,22 +120,22 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         if (attrs == null) {
             return;
         }
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Banner);
-        mIndicatorWidth = typedArray.getDimensionPixelSize(R.styleable.Banner_indicator_width, indicatorSize);
-        mIndicatorHeight = typedArray.getDimensionPixelSize(R.styleable.Banner_indicator_height, indicatorSize);
-        mIndicatorMargin = typedArray.getDimensionPixelSize(R.styleable.Banner_indicator_margin, BannerConfig.PADDING_SIZE);
-        mIndicatorSelectedResId = typedArray.getResourceId(R.styleable.Banner_indicator_drawable_selected, R.drawable.gray_radius);
-        mIndicatorUnselectedResId = typedArray.getResourceId(R.styleable.Banner_indicator_drawable_unselected, R.drawable.white_radius);
-        scaleType = typedArray.getInt(R.styleable.Banner_image_scale_type, scaleType);
-        delayTime = typedArray.getInt(R.styleable.Banner_delay_time, BannerConfig.TIME);
-        scrollTime = typedArray.getInt(R.styleable.Banner_scroll_time, BannerConfig.DURATION);
-        isAutoPlay = typedArray.getBoolean(R.styleable.Banner_is_auto_play, BannerConfig.IS_AUTO_PLAY);
-        titleBackground = typedArray.getColor(R.styleable.Banner_title_background, BannerConfig.TITLE_BACKGROUND);
-        titleHeight = typedArray.getDimensionPixelSize(R.styleable.Banner_title_height, BannerConfig.TITLE_HEIGHT);
-        titleTextColor = typedArray.getColor(R.styleable.Banner_title_textcolor, BannerConfig.TITLE_TEXT_COLOR);
-        titleTextSize = typedArray.getDimensionPixelSize(R.styleable.Banner_title_textsize, BannerConfig.TITLE_TEXT_SIZE);
-        mLayoutResId = typedArray.getResourceId(R.styleable.Banner_banner_layout, mLayoutResId);
-        bannerBackgroundImage = typedArray.getResourceId(R.styleable.Banner_banner_default_image, R.drawable.no_banner);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.xw_Banner);
+        mIndicatorWidth = typedArray.getDimensionPixelSize(R.styleable.xw_Banner_xw_indicator_width, indicatorSize);
+        mIndicatorHeight = typedArray.getDimensionPixelSize(R.styleable.xw_Banner_xw_indicator_height, indicatorSize);
+        mIndicatorMargin = typedArray.getDimensionPixelSize(R.styleable.xw_Banner_xw_indicator_margin, BannerConfig.PADDING_SIZE);
+        mIndicatorSelectedResId = typedArray.getResourceId(R.styleable.xw_Banner_xw_indicator_drawable_selected, R.drawable.xw_banner_gray_radius);
+        mIndicatorUnselectedResId = typedArray.getResourceId(R.styleable.xw_Banner_xw_indicator_drawable_unselected, R.drawable.xw_banner_white_radius);
+        scaleType = typedArray.getInt(R.styleable.xw_Banner_xw_image_scale_type, scaleType);
+        delayTime = typedArray.getInt(R.styleable.xw_Banner_xw_delay_time, BannerConfig.TIME);
+        scrollTime = typedArray.getInt(R.styleable.xw_Banner_xw_scroll_time, BannerConfig.DURATION);
+        isAutoPlay = typedArray.getBoolean(R.styleable.xw_Banner_xw_is_auto_play, BannerConfig.IS_AUTO_PLAY);
+        titleBackground = typedArray.getColor(R.styleable.xw_Banner_xw_title_background, BannerConfig.TITLE_BACKGROUND);
+        titleHeight = typedArray.getDimensionPixelSize(R.styleable.xw_Banner_xw_title_height, BannerConfig.TITLE_HEIGHT);
+        titleTextColor = typedArray.getColor(R.styleable.xw_Banner_xw_title_textcolor, BannerConfig.TITLE_TEXT_COLOR);
+        titleTextSize = typedArray.getDimensionPixelSize(R.styleable.xw_Banner_xw_title_textsize, BannerConfig.TITLE_TEXT_SIZE);
+        mLayoutResId = typedArray.getResourceId(R.styleable.xw_Banner_xw_banner_layout, mLayoutResId);
+        bannerBackgroundImage = typedArray.getResourceId(R.styleable.xw_Banner_xw_banner_default_image, R.drawable.xw_banner_no_banner);
         typedArray.recycle();
     }
 

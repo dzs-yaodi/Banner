@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@id/bannerContainer"
+    android:id="@id/xw_bannerContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false">
 
     <com.xw.banner.view.BannerViewPager
-        android:id="@id/bannerViewPager"
+        android:id="@id/xw_bannerViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipChildren="false" />
@@ -17,7 +17,7 @@
         android:layout_alignParentBottom="true">
 
         <LinearLayout
-            android:id="@id/circleIndicator"
+            android:id="@id/xw_circleIndicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -27,29 +27,29 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@id/numIndicator"
+            android:id="@id/xw_numIndicator"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_margin="8dp"
-            android:background="@drawable/black_background"
+            android:background="@drawable/xw_banner_black_background"
             android:gravity="center"
             android:text="1/1"
             android:textColor="#ffffff"
             android:visibility="gone" />
 
         <LinearLayout
-            android:id="@id/titleView"
+            android:id="@id/xw_titleView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/circleIndicator"
+            android:layout_below="@+id/xw_circleIndicator"
             android:background="#44000000"
             android:orientation="horizontal"
             android:visibility="gone"
             >
 
             <TextView
-                android:id="@id/bannerTitle"
+                android:id="@id/xw_bannerTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1000"
@@ -69,7 +69,7 @@
                 android:paddingRight="10dp">
 
                 <TextView
-                    android:id="@id/numIndicatorInside"
+                    android:id="@id/xw_numIndicatorInside"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -78,7 +78,7 @@
                     android:visibility="gone" />
 
                 <LinearLayout
-                    android:id="@id/indicatorInside"
+                    android:id="@id/xw_indicatorInside"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -88,7 +88,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/roundIndicator"
+            android:id="@+id/xw_roundIndicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -100,7 +100,7 @@
             />
     </RelativeLayout>
     <ImageView
-        android:id="@+id/bannerDefaultImage"
+        android:id="@+id/xw_bannerDefaultImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"

@@ -17,17 +17,17 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="20dp"
-        app:banner_layout="@layout/banner_layout"
-        app:indicator_drawable_selected="@drawable/banner_selected_shape"
-        app:indicator_drawable_unselected="@drawable/banner_unselected_shape"
+        app:xw_banner_layout="@layout/banner_layout"
+        app:xw_indicator_drawable_selected="@drawable/banner_selected_shape"
+        app:xw_indicator_drawable_unselected="@drawable/banner_unselected_shape"
         />
 
      <com.xw.banner.Banner
         android:id="@+id/banner3"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:indicator_drawable_selected="@drawable/banner_selected_shape"
-        app:indicator_drawable_unselected="@drawable/banner_unselected_shape"
+        app:xw_indicator_drawable_selected="@drawable/banner_selected_shape"
+        app:xw_indicator_drawable_unselected="@drawable/banner_unselected_shape"
         />
 
 
