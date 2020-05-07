@@ -89,7 +89,7 @@ Banner1.2 处理圆角矩形指示器不设置标题闪退的问题
 
 Banner1.2.1 标题处新增广告标签，设置bcom.github.dzs-yaodi:Banner:Taganner title的时候传入 TitleData 的集合 ，不再是string 集合
 
-Banner1.2.2 id问题
+Banner1.2.2 id问题 导致依赖冲突
 
 
 
