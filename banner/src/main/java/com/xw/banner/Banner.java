@@ -2,8 +2,11 @@ package com.xw.banner;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -55,7 +58,8 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private int gravity = -1;
     private int lastPosition = 1;
     private int scaleType = 1;
-    private List<String> titles;
+//    private List<String> titles;
+    private List<TitleData> titles;
     private List imageUrls;
     private List<View> imageViews;
     private List<ImageView> indicatorImages;
@@ -86,6 +90,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         super(context, attrs, defStyle);
         this.context = context;
         titles = new ArrayList<>();
+//        titleDatas = new ArrayList<>();
         imageUrls = new ArrayList<>();
         imageViews = new ArrayList<>();
         indicatorImages = new ArrayList<>();
@@ -201,6 +206,13 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         return this;
     }
 
+    public Banner setPageMargin(int marginPixels){
+        if (viewPager != null) {
+            viewPager.setPageMargin(marginPixels);
+        }
+        return this;
+    }
+
     /**
      * Set a {@link ViewPager.PageTransformer} that will be called for each attached page whenever
      * the scroll position is changed. This allows the application to apply custom property
@@ -216,8 +228,13 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         return this;
     }
 
-    public Banner setBannerTitles(List<String> titles) {
-        this.titles = titles;
+//    public Banner setBannerTitles(List<String> titles) {
+//        this.titles = titles;
+//        return this;
+//    }
+
+    public Banner setBannerTitles(List<TitleData> titleDatas){
+        this.titles = titleDatas;
         return this;
     }
 
@@ -237,7 +254,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         return this;
     }
 
-    public void update(List<?> imageUrls, List<String> titles) {
+    public void update(List<?> imageUrls, List<TitleData> titles) {
         this.titles.clear();
         this.titles.addAll(titles);
         update(imageUrls);
@@ -292,9 +309,23 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
             bannerTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleTextSize);
         }
         if (titles != null && titles.size() > 0) {
-            bannerTitle.setText(titles.get(0));
+            getAdTitle(0);
+//            bannerTitle.setText();
             bannerTitle.setVisibility(View.VISIBLE);
             titleView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void getAdTitle(int position) {
+        String title = titles.get(position).getTitle();
+        if (titles.get(position).isAdv() == 1) {
+            SpannableString spannableString = new SpannableString("广告" + title);
+            spannableString.setSpan(new RoundBackgroundColorSpan(context, Color.parseColor("#FFFFFF"),
+                    Color.parseColor("#999999")), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            bannerTitle.setText(spannableString);
+        }else{
+            bannerTitle.setText(title);
         }
     }
 
@@ -618,14 +649,16 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
             case BannerConfig.NUM_INDICATOR_TITLE:
                 numIndicatorInside.setText(position + "/" + count);
                 if (titles != null && titles.size() > 0) {
-                    bannerTitle.setText(titles.get(position - 1));
+//                    bannerTitle.setText(titles.get(position - 1));
+                    getAdTitle(position - 1);
                 }
                 break;
 //            case BannerConfig.CIRCLE_INDICATOR_TITLE:
             case BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE:
             case BannerConfig.CUSTOM_INDICATOR:
                 if (titles != null && titles.size() > 0) {
-                    bannerTitle.setText(titles.get(position - 1));
+//                    bannerTitle.setText(titles.get(position - 1));
+                    getAdTitle(position - 1);
                 }
                 break;
 //                bannerTitle.setText(titles.get(position - 1));
