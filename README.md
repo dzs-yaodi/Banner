@@ -87,6 +87,8 @@ Banner1.2 处理圆角矩形指示器不设置标题闪退的问题
 
 ![效果图](https://github.com/XW837156540/Banner/raw/master/app/src/main/res/drawable/no_title.jpg)
 
+Banner1.2.1 标题处新增广告标签，设置banner title的时候传入 TitleData 的集合 ，不再是string 集合
+
 
 
 
