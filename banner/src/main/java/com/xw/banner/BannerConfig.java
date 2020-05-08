@@ -27,7 +27,7 @@ public class BannerConfig {
     public static final int RIGHT = 7;
 
     /**
-     * banner
+     * xw_banner
      */
     public static final int PADDING_SIZE = 5;
     public static final int TIME = 2000;

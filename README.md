@@ -91,6 +91,8 @@ Banner1.2.1 标题处新增广告标签，设置bcom.github.dzs-yaodi:Banner:Tag
 
 Banner1.2.2 id问题 导致依赖冲突
 
+Banner1.2.3 修改资源文件名
+
 
 
 

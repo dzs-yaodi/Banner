@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         // 设置图片集合
         banner.setImages(integerList);
         // 设置标题集合（当banner样式有显示title时）
-//        banner.setBannerTitles(stringList);
+//        xw_banner.setBannerTitles(stringList);
         banner.setBannerTitles(titleDatas);
 
         banner.start();

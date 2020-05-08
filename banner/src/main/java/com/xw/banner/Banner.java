@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Banner extends FrameLayout implements ViewPager.OnPageChangeListener {
-    public String tag = "banner";
+    public String tag = "xw_banner";
     private int mIndicatorMargin = BannerConfig.PADDING_SIZE;
     private int mIndicatorWidth;
     private int mIndicatorHeight;
@@ -48,7 +48,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private boolean isScroll = BannerConfig.IS_SCROLL;
     private int mIndicatorSelectedResId = R.drawable.xw_banner_gray_radius;
     private int mIndicatorUnselectedResId = R.drawable.xw_banner_white_radius;
-    private int mLayoutResId = R.layout.banner;
+    private int mLayoutResId = R.layout.xw_banner;
     private int titleHeight;
     private int titleBackground;
     private int titleTextColor;
