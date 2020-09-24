@@ -318,10 +318,11 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
 
     public void getAdTitle(int position) {
         String title = titles.get(position).getTitle();
+        String tag = titles.get(position).getTag();
         if (titles.get(position).isAdv() == 1) {
-            SpannableString spannableString = new SpannableString("广告" + title);
+            SpannableString spannableString = new SpannableString(tag + title);
             spannableString.setSpan(new RoundBackgroundColorSpan(context, Color.parseColor("#FFFFFF"),
-                    Color.parseColor("#999999")), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    Color.parseColor("#999999")), 0, tag.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
             bannerTitle.setText(spannableString);
         }else{

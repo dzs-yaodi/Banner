@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
         stringList.add("这是标题4");
         stringList.add("这是标题5");
 
-        titleDatas.add(new TitleData("这是标题1",0));
-        titleDatas.add(new TitleData("这是标题2",1));
-        titleDatas.add(new TitleData("这是标题3",0));
-        titleDatas.add(new TitleData("这是标题4",1));
-        titleDatas.add(new TitleData("这是标题5",0));
+        titleDatas.add(new TitleData("这是标题1",0,"广告1"));
+        titleDatas.add(new TitleData("这是标题2",1,"广告2"));
+        titleDatas.add(new TitleData("这是标题3",0,"广告3"));
+        titleDatas.add(new TitleData("这是标题4",1,"广告4"));
+        titleDatas.add(new TitleData("这是标题5",0,"广告5"));
 
         setBanner(mBanner1,1);
 //        setBanner(mBanner2,2);
